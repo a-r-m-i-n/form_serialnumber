@@ -1,0 +1,32 @@
+{
+    "name": "t3/form-serialnumber",
+    "description": "Provides serialnumber finisher for EXT:form",
+    "type": "typo3-cms-extension",
+    "homepage": "https://bitbucket.org/t---3/form_serialnumber",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Armin Vieweg",
+            "role": "Developer",
+            "email": "armin@v.ieweg.de",
+            "homepage": "https://v.ieweg.de"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "typo3/cms-core": "^9.5",
+        "typo3/cms-form": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "T3\\FormSerialnumber\\": "Classes"
+        }
+    },
+    "replace": {
+        "form_serialnumber": "*"
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=psr2 --extensions=php --ignore=*/vendor/* .",
+        "phpcbf": "phpcbf --standard=psr2 --extensions=php --ignore=*/vendor/* ."
+    }
+}
