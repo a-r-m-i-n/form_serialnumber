@@ -1,0 +1,17 @@
+# Registration for the backend
+module.tx_form {
+    settings {
+        yamlConfigurations {
+            1337 = EXT:form_serialnumber/Configuration/Yaml/SerialnumberBackend.yaml
+        }
+    }
+}
+
+# Registration for the frontend
+plugin.tx_form {
+    settings {
+        yamlConfigurations {
+            1337 = EXT:form_serialnumber/Configuration/Yaml/SerialnumberFrontend.yaml
+        }
+    }
+}

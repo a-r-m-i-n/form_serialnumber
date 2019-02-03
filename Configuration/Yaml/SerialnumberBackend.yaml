@@ -1,0 +1,66 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              formEditor:
+                editors:
+                  900:
+                    selectOptions:
+                      500:
+                        value: 'Serialnumber'
+                        label: 'Serialnumber Finisher'
+
+                propertyCollections:
+                  finishers:
+                    500:
+                      __inheritances:
+                        10: 'TYPO3.CMS.Form.mixins.FormEngineCustomActionMixin'
+                      identifier: 'Serialnumber'
+                      editors:
+                        __inheritances:
+                          10: 'TYPO3.CMS.Form.mixins.formElementMixins.BaseCollectionEditorsMixin'
+                        100:
+                          label: 'Serialnumber'
+                        200:
+                          identifier: 'addField'
+                          templateName: 'Inspector-CheckboxEditor'
+                          label: 'Enable additional "serialnumber" field'
+                          propertyPath: 'options.addField'
+                        300:
+                          identifier: 'fieldLabel'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Label of additional field'
+                          propertyPath: 'options.fieldLabel'
+                          propertyValidators:
+                            10: 'NotEmpty'
+                        400:
+                          identifier: 'prefix'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Serialnumber Prefix'
+                          propertyPath: 'options.prefix'
+
+          finishersDefinition:
+            Serialnumber:
+              formEditor:
+                iconIdentifier: 't3-form-icon-finisher'
+                predefinedDefaults:
+                  options:
+                    addField: false
+                    fieldLabel: 'S/N'
+                    prefix: ''
+
+      mixins:
+        FormEngineCustomActionMixin:
+          elements:
+            addField:
+              config:
+                type: 'check'
+            fieldLabel:
+              config:
+                type: 'input'
+            prefix:
+              config:
+                type: 'input'

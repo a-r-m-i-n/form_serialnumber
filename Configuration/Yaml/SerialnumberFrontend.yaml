@@ -1,0 +1,12 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          finishersDefinition:
+            Serialnumber:
+              implementationClassName: 'T3\FormSerialnumber\Finisher\SerialnumberFinisher'
+              options:
+                addField: false
+                fieldLabel: 'S/N'
+                prefix: ''
