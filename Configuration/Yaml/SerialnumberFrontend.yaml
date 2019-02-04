@@ -7,6 +7,7 @@ TYPO3:
             Serialnumber:
               implementationClassName: 'T3\FormSerialnumber\Finisher\SerialnumberFinisher'
               options:
+                identifier: 'serialnumber'
                 addField: false
                 fieldLabel: 'S/N'
                 prefix: ''

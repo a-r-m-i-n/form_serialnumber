@@ -8,7 +8,8 @@ Features
 
 * Adds finisher to EXT:form to generate serial numbers, which can be used in further finishers
 * Serial numbers can get prefixed for output
-* Current index is stored in sys_registry
+* Current index/counter is stored in sys_registry
+* You can reuse the same counter in different forms
 
 
 Screenshots
@@ -18,6 +19,7 @@ Any form with this serialnumber finisher configured
 
 .. image:: Documentation/Images/finisher-config.png
 
+
 get unique serialnumber, you can use in output and other finishers
 
 .. image:: Documentation/Images/mail.png
@@ -26,7 +28,7 @@ get unique serialnumber, you can use in output and other finishers
 Requirements
 ------------
 
-* TYPO3 9.5 or higher and
+* TYPO3 9.5
 * EXT:forms installed
 
 
@@ -49,6 +51,8 @@ Configuration
 
 The serialnumber finisher has some options you can use:
 
+* **identifier** *(string)* Defines the name of the counter to use. With this option you can reuse the same counter
+                            in different forms, if you want.
 * **addField** *(boolean)* When enabled a field is dynamically added to form runtime.
 * **fieldLabel:** *(string)* Label of this field.
 * **prefix:** *(string)* Set before current index. e.g "2019-" would provide "2019-123" serial number.
@@ -92,6 +96,7 @@ serialnumber as additional field.
     finishers:
       -
         options:
+          identifier: example
           addField: true
           fieldLabel: Seriennummer
           prefix: 2019-

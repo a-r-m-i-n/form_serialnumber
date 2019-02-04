@@ -25,18 +25,25 @@ TYPO3:
                         100:
                           label: 'Serialnumber'
                         200:
+                          identifier: 'identifier'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Identifier for counter'
+                          propertyPath: 'options.identifier'
+                          propertyValidators:
+                            10: 'NotEmpty'
+                        300:
                           identifier: 'addField'
                           templateName: 'Inspector-CheckboxEditor'
                           label: 'Enable additional "serialnumber" field'
                           propertyPath: 'options.addField'
-                        300:
+                        400:
                           identifier: 'fieldLabel'
                           templateName: 'Inspector-TextEditor'
                           label: 'Label of additional field'
                           propertyPath: 'options.fieldLabel'
                           propertyValidators:
                             10: 'NotEmpty'
-                        400:
+                        500:
                           identifier: 'prefix'
                           templateName: 'Inspector-TextEditor'
                           label: 'Serialnumber Prefix'
@@ -58,6 +65,9 @@ TYPO3:
             addField:
               config:
                 type: 'check'
+            identifier:
+              config:
+                type: 'input'
             fieldLabel:
               config:
                 type: 'input'

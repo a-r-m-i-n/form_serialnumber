@@ -23,6 +23,7 @@ class SerialnumberFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFini
      * @var array
      */
     protected $options = [
+        'identifier' => 'serialnumber',
         'addField' => false,
         'fieldLabel' => 'Serialnumber',
         'prefix' => ''
@@ -44,8 +45,7 @@ class SerialnumberFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFini
      */
     public function executeInternal()
     {
-        $formIdentifier = $this->finisherContext->getFormRuntime()->getIdentifier();
-        $registryKey = $formIdentifier . '_last_id';
+        $registryKey = $this->parseOption('identifier') . '_last_id';
 
         $lastId = $this->registry->get(__CLASS__, $registryKey, 0);
         $thisId = $lastId + 1;
