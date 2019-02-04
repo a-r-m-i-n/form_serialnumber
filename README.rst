@@ -33,7 +33,12 @@ Requirements
 Installation
 ------------
 
-Just install and clear system caches of TYPO3.
+Just install the extension in TYPO3.
+
+In your TypoScript Template you need to add the static includes "EXT:form Serialnumber Finisher", before you can
+add the serialnumber finisher in your forms.
+
+Clear the system caches.
 
 
 Using the finisher
