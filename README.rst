@@ -51,8 +51,7 @@ Configuration
 
 The serialnumber finisher has some options you can use:
 
-* **identifier** *(string)* Defines the name of the counter to use. With this option you can reuse the same counter
-                            in different forms, if you want.
+* **identifier** *(string)* Defines the name of the counter to use. With this option you can reuse the same counter in different forms, if you want.
 * **addField** *(boolean)* When enabled a field is dynamically added to form runtime.
 * **fieldLabel:** *(string)* Label of this field.
 * **prefix:** *(string)* Set before current index. e.g "2019-" would provide "2019-123" serial number.
