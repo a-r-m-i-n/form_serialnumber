@@ -6,8 +6,33 @@ TYPO3:
           finishersDefinition:
             Serialnumber:
               implementationClassName: 'T3\FormSerialnumber\Finisher\SerialnumberFinisher'
-              options:
-                identifier: 'serialnumber'
-                addField: false
-                fieldLabel: 'S/N'
-                prefix: ''
+              FormEngine:
+                __inheritances:
+                  10: 'TYPO3.CMS.Form.mixins.formElementMixins.formSerialnumberFinisherMixin'
+              formEditor:
+                label: 'Serialnumber'
+                options:
+                  identifier: 'serialnumber'
+                  addField: false
+                  fieldLabel: 'S/N'
+                  prefix: ''
+      mixins:
+        formElementMixins:
+          formSerialnumberFinisherMixin:
+            elements:
+              addField:
+                label: 'Add additional field'
+                config:
+                  type: 'check'
+              identifier:
+                label: 'Counter Identifier'
+                config:
+                  type: 'input'
+              fieldLabel:
+                label: 'Field label'
+                config:
+                  type: 'input'
+              prefix:
+                label: 'Prefix'
+                config:
+                  type: 'input'

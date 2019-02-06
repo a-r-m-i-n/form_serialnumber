@@ -35,12 +35,10 @@ Requirements
 Installation
 ------------
 
-Just install the extension in TYPO3.
-
-In your TypoScript Template you need to add the static includes "EXT:form Serialnumber Finisher", before you can
-add the serialnumber finisher in your forms.
-
-Clear the system caches.
+1. Just install the extension in TYPO3.
+2. In your TypoScript Template you need to add the static includes "EXT:form Serialnumber Finisher", before you can
+   add the serialnumber finisher in your forms.
+3. Clear the system caches.
 
 
 Using the finisher
@@ -55,6 +53,9 @@ The serialnumber finisher has some options you can use:
 * **addField** *(boolean)* When enabled a field is dynamically added to form runtime.
 * **fieldLabel:** *(string)* Label of this field.
 * **prefix:** *(string)* Set before current index. e.g "2019-" would provide "2019-123" serial number.
+
+Also you can override the finisher settings in Flexform of form plugin content element, when you enable the
+"Override finisher settings" checkbox.
 
 
 Variables

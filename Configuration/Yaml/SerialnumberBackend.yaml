@@ -9,15 +9,15 @@ TYPO3:
                 editors:
                   900:
                     selectOptions:
-                      500:
+                      1549453170:
                         value: 'Serialnumber'
                         label: 'Serialnumber Finisher'
 
                 propertyCollections:
                   finishers:
-                    500:
+                    1549453170:
                       __inheritances:
-                        10: 'TYPO3.CMS.Form.mixins.FormEngineCustomActionMixin'
+                        10: 'TYPO3.CMS.Form.mixins.formElementMixins.formSerialnumberFinisherMixin'
                       identifier: 'Serialnumber'
                       editors:
                         __inheritances:
@@ -58,19 +58,28 @@ TYPO3:
                     addField: false
                     fieldLabel: 'S/N'
                     prefix: ''
+              FormEngine:
+                label: 'Serialnumber'
+                __inheritances:
+                  10: 'TYPO3.CMS.Form.mixins.formElementMixins.formSerialnumberFinisherMixin'
 
       mixins:
-        FormEngineCustomActionMixin:
-          elements:
-            addField:
-              config:
-                type: 'check'
-            identifier:
-              config:
-                type: 'input'
-            fieldLabel:
-              config:
-                type: 'input'
-            prefix:
-              config:
-                type: 'input'
+        formElementMixins:
+          formSerialnumberFinisherMixin:
+            elements:
+              addField:
+                label: 'Enable additional "serialnumber" field'
+                config:
+                  type: 'check'
+              identifier:
+                label: 'Identifier for counter'
+                config:
+                  type: 'input'
+              fieldLabel:
+                label: 'Label of additional field'
+                config:
+                  type: 'input'
+              prefix:
+                label: 'Serialnumber Prefix'
+                config:
+                  type: 'input'
