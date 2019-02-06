@@ -6,6 +6,12 @@
     "license": "GPL-2.0+",
     "authors": [
         {
+            "name": "Thomas Hezel",
+            "role": "Sponsor",
+            "email": "thomas.hezel@zazudesign.de",
+            "homepage": "https://www.zazudesign.de"
+        },
+        {
             "name": "Armin Vieweg",
             "role": "Developer",
             "email": "armin@v.ieweg.de",

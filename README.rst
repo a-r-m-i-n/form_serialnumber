@@ -118,7 +118,27 @@ serialnumber as additional field.
         identifier: EmailToReceiver
 
 
+Sponsor
+-------
+
+This extension has been sponsored by:
+
+
+.. image:: Documentation/Images/logo-zazudesign.png
+
+
+**zazudesign - die Schwarzwald Werbeagentur in Berlin**
+
+Digitalisierung, Projektierung digitaler Plattformen, Filmproduktion und TYPO3
+
+* Web: https://www.zazudesign.de
+* Email: thomas.hezel@zazudesign.de
+
+
 Links
 -----
 
 * Source code: https://bitbucket.org/t---3/form_serialnumber
+* Packagist: https://packagist.org/packages/t3/form-serialnumber
+* TER: https://extensions.typo3.org/extension/form_serialnumber
+* Sponsor: https://www.zazudesign.de
