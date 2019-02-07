@@ -1,11 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# TYPO3 Extension Box
+# TYPO3 Extension Box (modified)
 # Generic Vagrantfile for TYPO3 extension development
 
 # Author: Armin Vieweg <armin@v.ieweg.de>
-# Version: 1.1.0
+# Based on version: 1.1.0
 # Date: 2018-10-03
 
 # Support: TYPO3 8, TYPO3 9, Adminer

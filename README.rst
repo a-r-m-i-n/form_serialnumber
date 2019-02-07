@@ -81,7 +81,7 @@ TYPO3 provides a database table and a simple API to store informations which doe
 Here you can modify the value manually.
 
 .. caution::
-   The values stored in sys_registry are serialized!
+   The values stored in `sys_registry <https://docs.typo3.org/typo3cms/CoreApiReference/ApiOverview/SystemRegistry/Index.html>`_ are serialized!
 
 
 Example finisher configuration
