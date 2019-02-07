@@ -2,7 +2,7 @@
 module.tx_form {
     settings {
         yamlConfigurations {
-            1337 = EXT:form_serialnumber/Configuration/Yaml/SerialnumberBackend.yaml
+            1549453170 = EXT:form_serialnumber/Configuration/Yaml/SerialnumberBackend.yaml
         }
     }
 }
@@ -11,7 +11,7 @@ module.tx_form {
 plugin.tx_form {
     settings {
         yamlConfigurations {
-            1337 = EXT:form_serialnumber/Configuration/Yaml/SerialnumberFrontend.yaml
+            1549453170 = EXT:form_serialnumber/Configuration/Yaml/SerialnumberFrontend.yaml
         }
     }
 }
