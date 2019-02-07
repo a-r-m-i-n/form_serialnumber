@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
     extensionKey = "form_serialnumber"
     packageName = "t3/form-serialnumber"
     staticIpAddress = "192.168.6.177"
-    extensionRepo = "https://bitbucket.org/t---3/form_serialnumber"
+    extensionRepo = "https://bitbucket.org/t--3/form_serialnumber"
 
     # Base configuration
     config.vm.box = "ArminVieweg/ubuntu-bionic64-lamp"

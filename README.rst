@@ -123,7 +123,6 @@ Sponsor
 
 This extension has been sponsored by:
 
-
 .. image:: Documentation/Images/logo-zazudesign.png
 
 
@@ -138,7 +137,7 @@ Digitalisierung, Projektierung digitaler Plattformen, Filmproduktion und TYPO3
 Links
 -----
 
-* Source code: https://bitbucket.org/t---3/form_serialnumber
-* Packagist: https://packagist.org/packages/t3/form-serialnumber
-* TER: https://extensions.typo3.org/extension/form_serialnumber
-* Sponsor: https://www.zazudesign.de
+* `Source code <https://bitbucket.org/t--3/form_serialnumber>`_
+* `Packagist <https://packagist.org/packages/t3/form-serialnumber>`_
+* `TER <https://extensions.typo3.org/extension/form_serialnumber>`_
+* `Sponsor <https://www.zazudesign.de>`_
