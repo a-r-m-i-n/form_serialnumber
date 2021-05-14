@@ -23,6 +23,14 @@
         "typo3/cms-core": "^9.5",
         "typo3/cms-form": "^9.5"
     },
+    "require-dev": {
+        "t3/cms": "^10.4",
+        "friendsofphp/php-cs-fixer": "^2.18",
+        "phpstan/phpstan": "^0.12.80",
+        "jangregor/phpstan-prophecy": "^0.8",
+        "saschaegerer/phpstan-typo3": "^0.13",
+        "armin/editorconfig-cli": "^1.2"
+    },
     "autoload": {
         "psr-4": {
             "T3\\FormSerialnumber\\": "Classes"
@@ -32,7 +40,30 @@
         "form_serialnumber": "*"
     },
     "scripts": {
-        "phpcs": "phpcs --standard=psr2 --extensions=php --ignore=*/vendor/* .",
-        "phpcbf": "phpcbf --standard=psr2 --extensions=php --ignore=*/vendor/* ."
+        "check": [
+            "@ec",
+            "@phpcs",
+            "@phpstan"
+        ],
+        "fix": [
+            "@ec:fix",
+            "@phpcs:fix"
+        ],
+        "phpstan": "phpstan analyse -c Resources/Private/Build/phpstan.neon",
+        "phpcs": "php-cs-fixer fix --config Resources/Private/Build/php-cs-rules.php --ansi --verbose --diff --dry-run",
+        "phpcs:fix": "php-cs-fixer fix --config Resources/Private/Build/php-cs-rules.php --ansi",
+        "ec": "ec -n -e .Build",
+        "ec:fix": "ec -n -e .Build --fix"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "form_serialnumber",
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/public",
+            "app-dir": ".Build"
+        }
     }
 }
