@@ -52,7 +52,7 @@ TYPO3:
           finishersDefinition:
             Serialnumber:
               formEditor:
-                iconIdentifier: 't3-form-icon-finisher'
+                iconIdentifier: 'form-finisher'
                 predefinedDefaults:
                   options:
                     addField: false

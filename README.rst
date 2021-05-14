@@ -28,7 +28,7 @@ get unique serialnumber, you can use in output and other finishers
 Requirements
 ------------
 
-* TYPO3 9.5
+* TYPO3 9.5, 10.4 or 11
 * EXT:forms installed
 
 

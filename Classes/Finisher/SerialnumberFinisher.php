@@ -1,4 +1,7 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
+
 namespace T3\FormSerialnumber\Finisher;
 
 /*  | This extension is made with ❤ for TYPO3 CMS and zazudesign.
@@ -8,9 +11,10 @@ namespace T3\FormSerialnumber\Finisher;
  */
 use TYPO3\CMS\Core\Registry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Form\Domain\Model\Renderable\AbstractRenderable;
 
 /**
- * Serialnumber finisher for EXT:form
+ * Serialnumber finisher for EXT:form.
  */
 class SerialnumberFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher
 {
@@ -26,13 +30,11 @@ class SerialnumberFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFini
         'identifier' => 'serialnumber',
         'addField' => false,
         'fieldLabel' => 'Serialnumber',
-        'prefix' => ''
+        'prefix' => '',
     ];
 
     /**
-     * SerialnumberFinisher constructor
-     *
-     * @param string $finisherIdentifier
+     * SerialnumberFinisher constructor.
      */
     public function __construct(string $finisherIdentifier = '')
     {
@@ -41,7 +43,7 @@ class SerialnumberFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFini
     }
 
     /**
-     * @return void
+     * @return string|null
      */
     public function executeInternal()
     {
@@ -55,11 +57,12 @@ class SerialnumberFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFini
 
         if ($this->parseOption('addField')) {
             try {
+                /** @var AbstractRenderable $newField */
                 $newField = $this->finisherContext
                     ->getFormRuntime()
                     ->getFormDefinition()
                     ->getPageByIndex(0)
-                    ->createElement('serialnumber', 'Hidden');
+                    ->createElement('serialnumber', 'Text');
                 $newField->setDefaultValue($serialnumber);
                 $newField->setDataType('string');
                 $newField->setLabel($this->parseOption('fieldLabel'));
@@ -77,5 +80,7 @@ class SerialnumberFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFini
             'serialnumber',
             $serialnumber
         );
+
+        return null;
     }
 }

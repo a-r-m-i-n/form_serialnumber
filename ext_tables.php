@@ -11,7 +11,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    $_EXTKEY,
+    'form_serialnumber',
     'Configuration/TypoScript',
     'EXT:form Serialnumber Finisher'
 );

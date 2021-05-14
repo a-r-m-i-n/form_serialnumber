@@ -20,8 +20,8 @@
     ],
     "require": {
         "php": ">=7.2",
-        "typo3/cms-core": "^9.5",
-        "typo3/cms-form": "^9.5"
+        "typo3/cms-core": "^9.5 || ^10.4 || ^11.0",
+        "typo3/cms-form": "^9.5 || ^10.4 || ^11.0"
     },
     "require-dev": {
         "t3/cms": "^10.4",
@@ -37,7 +37,7 @@
         }
     },
     "replace": {
-        "form_serialnumber": "*"
+        "typo3-ter/form-serialnumber": "*"
     },
     "scripts": {
         "check": [
