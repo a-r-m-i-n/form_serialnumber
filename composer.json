@@ -1,6 +1,6 @@
 {
     "name": "t3/form-serialnumber",
-    "description": "Provides serialnumber finisher for EXT:form",
+    "description": "Provides serial number finisher for EXT:form",
     "type": "typo3-cms-extension",
     "homepage": "https://bitbucket.org/t--3/form_serialnumber",
     "license": "GPL-2.0+",
