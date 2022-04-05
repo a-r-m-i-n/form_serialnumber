@@ -65,6 +65,14 @@ TYPO3:
 
       mixins:
         formElementMixins:
+          BaseCollectionEditorsMixin:
+            100:
+              identifier: header
+              templateName: Inspector-CollectionElementHeaderEditor
+              label: ''
+              9999:
+                identifier: removeButton
+                templateName: Inspector-RemoveElementEditor
           formSerialnumberFinisherMixin:
             elements:
               addField:
