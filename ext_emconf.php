@@ -3,22 +3,22 @@
 /*  | This extension is made with ❤ for TYPO3 CMS and zazudesign.
  *  | It is licensed under GNU General Public License.
  *  |
- *  | (c) 2019-2021 Armin Vieweg <armin@v.ieweg.de>
+ *  | (c) 2019-2024 Armin Vieweg <armin@v.ieweg.de>
  */
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'EXT:form Serialnumber Finisher',
     'description' => 'Provides serialnumber finisher for EXT:form',
     'category' => 'misc',
-    'version' => '1.1.1',
+    'version' => '1.2.0-dev',
     'state' => 'stable',
     'author' => 'Armin Vieweg',
     'author_email' => 'armin@v.ieweg.de',
     'author_company' => 'Sponsored by: zazudesign - die Schwarzwald Werbeagentur in Berlin',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.0-11.9.99',
-            'form' => '9.5.0-11.9.99',
+            'typo3' => '12.4.0-13.9.99',
+            'form' => '12.4.0-13.9.99',
         ],
         'conflicts' => [],
         'suggests' => [],

@@ -28,7 +28,8 @@ get unique serialnumber, you can use in output and other finishers
 Requirements
 ------------
 
-* TYPO3 9.5, 10.4 or 11
+* PHP 8.1 or higher
+* TYPO3 CMS 12.4, or 13.x
 * EXT:forms installed
 
 

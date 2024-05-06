@@ -19,12 +19,12 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
-        "typo3/cms-core": "^9.5 || ^10.4 || ^11.0",
-        "typo3/cms-form": "^9.5 || ^10.4 || ^11.0"
+        "php": "^8.1",
+        "typo3/cms-core": "^12.4 || ^13.1",
+        "typo3/cms-form": "^12.4 || ^13.1"
     },
     "require-dev": {
-        "t3/cms": "^10.4",
+        "t3/cms": "^12.4",
         "friendsofphp/php-cs-fixer": "^2.18",
         "phpstan/phpstan": "^0.12.80",
         "jangregor/phpstan-prophecy": "^0.8",

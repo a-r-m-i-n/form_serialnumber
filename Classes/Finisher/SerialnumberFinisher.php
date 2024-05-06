@@ -7,7 +7,7 @@ namespace T3\FormSerialnumber\Finisher;
 /*  | This extension is made with ❤ for TYPO3 CMS and zazudesign.
  *  | It is licensed under GNU General Public License.
  *  |
- *  | (c) 2019 Armin Vieweg <armin@v.ieweg.de>
+ *  | (c) 2019-2024 Armin Vieweg <armin@v.ieweg.de>
  */
 use TYPO3\CMS\Core\Registry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -33,12 +33,8 @@ class SerialnumberFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFini
         'prefix' => '',
     ];
 
-    /**
-     * SerialnumberFinisher constructor.
-     */
-    public function __construct(string $finisherIdentifier = '')
+    public function __construct()
     {
-        parent::__construct($finisherIdentifier);
         $this->registry = GeneralUtility::makeInstance(Registry::class);
     }
 
