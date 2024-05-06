@@ -11,7 +11,7 @@ namespace T3\FormSerialnumber\Finisher;
  */
 use TYPO3\CMS\Core\Registry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Form\Domain\Model\Renderable\AbstractRenderable;
+use TYPO3\CMS\Form\Domain\Model\FormElements\AbstractFormElement;
 
 /**
  * Serialnumber finisher for EXT:form.
@@ -53,7 +53,7 @@ class SerialnumberFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFini
 
         if ($this->parseOption('addField')) {
             try {
-                /** @var AbstractRenderable $newField */
+                /** @var AbstractFormElement $newField */
                 $newField = $this->finisherContext
                     ->getFormRuntime()
                     ->getFormDefinition()

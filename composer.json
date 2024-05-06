@@ -25,11 +25,11 @@
     },
     "require-dev": {
         "t3/cms": "^12.4",
-        "friendsofphp/php-cs-fixer": "^2.18",
-        "phpstan/phpstan": "^0.12.80",
-        "jangregor/phpstan-prophecy": "^0.8",
-        "saschaegerer/phpstan-typo3": "^0.13",
-        "armin/editorconfig-cli": "^1.2"
+        "armin/editorconfig-cli": "^2.0",
+        "friendsofphp/php-cs-fixer": "^3.55",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-doctrine": "^1.3",
+        "saschaegerer/phpstan-typo3": "^1.10"
     },
     "autoload": {
         "psr-4": {
@@ -50,13 +50,17 @@
             "@phpcs:fix"
         ],
         "phpstan": "phpstan analyse -c Resources/Private/Build/phpstan.neon",
-        "phpcs": "php-cs-fixer fix --config Resources/Private/Build/php-cs-rules.php --ansi --verbose --diff --dry-run",
-        "phpcs:fix": "php-cs-fixer fix --config Resources/Private/Build/php-cs-rules.php --ansi",
+        "phpcs": "php-cs-fixer fix --config Resources/Private/Build/php-cs-rules.php --ansi --verbose --diff --dry-run -- Classes",
+        "phpcs:fix": "php-cs-fixer fix --config Resources/Private/Build/php-cs-rules.php --ansi -- Classes",
         "ec": "ec -n -e .Build",
         "ec:fix": "ec -n -e .Build --fix"
     },
     "config": {
-        "vendor-dir": ".Build/vendor"
+        "vendor-dir": ".Build/vendor",
+        "allow-plugins": {
+            "typo3/cms-composer-installers": false,
+            "typo3/class-alias-loader": false
+        }
     },
     "extra": {
         "typo3/cms": {
