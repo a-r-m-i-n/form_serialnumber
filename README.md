@@ -25,7 +25,7 @@ get unique serialnumber, you can use in output and other finishers
 ## Requirements
 
 * PHP 8.1 or higher
-* TYPO3 CMS 12.4, 13.x, or 14.3
+* TYPO3 CMS 12.4, 13.4, or 14.3
 * EXT:form installed
 
 
@@ -127,7 +127,7 @@ Digitalisierung, Projektierung digitaler Plattformen, Filmproduktion und TYPO3
 
 ## Links
 
-* [Source code](https://bitbucket.org/t--3/form_serialnumber)
+* [Source code](https://github.com/a-r-m-i-n/form_serialnumber)
 * [Packagist](https://packagist.org/packages/t3/form-serialnumber)
 * [TER](https://extensions.typo3.org/extension/form_serialnumber)
 * [Sponsor](https://www.zazudesign.de)
