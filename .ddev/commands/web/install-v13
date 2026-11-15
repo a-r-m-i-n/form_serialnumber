@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 VERSION=v13
 
 rm -rf /var/www/html/$VERSION/*
@@ -9,7 +11,20 @@ composer config extra.typo3/cms.web-dir public -d /var/www/html/$VERSION
 composer config repositories.$EXTENSION_KEY path ../../$EXTENSION_KEY -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/cms-composer-installers true -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/class-alias-loader true -d /var/www/html/$VERSION
-composer req t3/cms:'^13' $PACKAGE_NAME:'*@dev' --no-progress -n -d /var/www/html/$VERSION
+composer req typo3/minimal:'^13.4' \
+         typo3/cms-belog:'^13.4' \
+         typo3/cms-beuser:'^13.4' \
+         typo3/cms-cli:'^3.1' \
+         typo3/cms-fluid-styled-content:'^13.4' \
+         typo3/cms-info:'^13.4' \
+         typo3/cms-install:'^13.4' \
+         typo3/cms-lowlevel:'^13.4' \
+         typo3/cms-rte-ckeditor:'^13.4' \
+         typo3/cms-setup:'^13.4' \
+         typo3/cms-tstemplate:'^13.4' \
+         helhum/typo3-console:'^9.0' \
+         "$PACKAGE_NAME:*@dev" \
+         --no-progress -n -d /var/www/html/$VERSION
 
 cd /var/www/html/$VERSION
 
@@ -21,6 +36,7 @@ vendor/bin/typo3 configuration:set 'BE/debug' 1
 vendor/bin/typo3 configuration:set 'FE/debug' 1
 vendor/bin/typo3 configuration:set 'SYS/devIPmask' '*'
 vendor/bin/typo3 configuration:set 'SYS/displayErrors' 1
+vendor/bin/typo3 configuration:set 'SYS/trustedHostsPattern' '.*.*'
 vendor/bin/typo3 configuration:set 'MAIL/transport' 'smtp'
 vendor/bin/typo3 configuration:set 'MAIL/transport_smtp_server' 'localhost:1025'
 vendor/bin/typo3 configuration:set 'MAIL/defaultMailFromAddress' 'admin@example.com'

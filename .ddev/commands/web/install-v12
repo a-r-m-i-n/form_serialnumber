@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 VERSION=v12
 
 rm -rf /var/www/html/$VERSION/*
@@ -7,9 +9,24 @@ mkdir -p /var/www/html/$VERSION/
 echo "{}" > /var/www/html/$VERSION/composer.json
 composer config extra.typo3/cms.web-dir public -d /var/www/html/$VERSION
 composer config repositories.$EXTENSION_KEY path ../../$EXTENSION_KEY -d /var/www/html/$VERSION
+# Allow vulnerable packages only in this local TYPO3 v12 development installation.
+composer config audit.block-insecure false -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/cms-composer-installers true -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/class-alias-loader true -d /var/www/html/$VERSION
-composer req t3/cms:'^12' $PACKAGE_NAME:'*@dev' --no-progress -n -d /var/www/html/$VERSION
+composer req typo3/minimal:'^12.4' \
+         typo3/cms-belog:'^12.4' \
+         typo3/cms-beuser:'^12.4' \
+         typo3/cms-cli:'^3.1' \
+         typo3/cms-fluid-styled-content:'^12.4' \
+         typo3/cms-info:'^12.4' \
+         typo3/cms-install:'^12.4' \
+         typo3/cms-lowlevel:'^12.4' \
+         typo3/cms-rte-ckeditor:'^12.4' \
+         typo3/cms-setup:'^12.4' \
+         typo3/cms-tstemplate:'^12.4' \
+         helhum/typo3-console:'^8.0' \
+         "$PACKAGE_NAME:*@dev" \
+         --no-progress -n -d /var/www/html/$VERSION
 
 cd /var/www/html/$VERSION
 

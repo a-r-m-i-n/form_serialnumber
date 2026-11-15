@@ -9,8 +9,8 @@ router_http_port: "80"
 router_https_port: "443"
 xdebug_enabled: false
 additional_hostnames:
-    - docs.form-serialnumber
     - v12.form-serialnumber
     - v13.form-serialnumber
+    - v14.form-serialnumber
 additional_fqdns: []
 use_dns_when_possible: true
