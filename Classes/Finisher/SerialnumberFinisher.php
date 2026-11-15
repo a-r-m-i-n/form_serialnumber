@@ -24,7 +24,7 @@ class SerialnumberFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFini
     protected $registry;
 
     /**
-     * @var array
+     * @var array<string, mixed>
      */
     protected $options = [
         'identifier' => 'serialnumber',
