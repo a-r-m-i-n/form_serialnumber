@@ -1,0 +1,7 @@
+name: t3/form-serialnumber
+label: 'Serialnumber Finisher'
+priority: 100
+
+imports:
+  - { resource: 'EXT:form_serialnumber/Configuration/Yaml/SerialnumberFrontend.yaml' }
+  - { resource: 'EXT:form_serialnumber/Configuration/Yaml/SerialnumberBackend.yaml' }

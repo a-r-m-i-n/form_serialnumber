@@ -25,15 +25,17 @@ get unique serialnumber, you can use in output and other finishers
 ## Requirements
 
 * PHP 8.1 or higher
-* TYPO3 CMS 12.4, or 13.x
-* EXT:forms installed
+* TYPO3 CMS 12.4, 13.x, or 14.3
+* EXT:form installed
 
 
 ## Installation
 
 1. Just install the extension in TYPO3.
-2. In your TypoScript Template you need to add the static includes "EXT:form Serialnumber Finisher", before you can
-   add the serialnumber finisher in your forms.
+2. Register the form configuration:
+   * **TYPO3 v12/v13:** Add the static include "EXT:form Serialnumber Finisher" to your TypoScript template.
+   * **TYPO3 v14:** The configuration is automatically discovered through
+     `Configuration/Form/Serialnumber/config.yaml`. No static TypoScript include is needed.
 3. Clear the system caches.
 
 
