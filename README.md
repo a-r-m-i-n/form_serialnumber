@@ -1,10 +1,8 @@
-TYPO3 CMS: Form Framework - Serialnumber Finisher
-=================================================
+# TYPO3 CMS: Form Framework - Serialnumber Finisher
 
 Provides serialnumber finisher for EXT:form
 
-Features
---------
+## Features
 
 * Adds finisher to EXT:form to generate serial numbers, which can be used in further finishers
 * Serial numbers can get prefixed for output
@@ -12,29 +10,26 @@ Features
 * You can reuse the same counter in different forms
 
 
-Screenshots
------------
+## Screenshots
 
 Any form with this serialnumber finisher configured
 
-.. image:: Documentation/Images/finisher-config.png
+![Serialnumber finisher configuration](Documentation/Images/finisher-config.png)
 
 
 get unique serialnumber, you can use in output and other finishers
 
-.. image:: Documentation/Images/mail.png
+![Serialnumber in email output](Documentation/Images/mail.png)
 
 
-Requirements
-------------
+## Requirements
 
 * PHP 8.1 or higher
 * TYPO3 CMS 12.4, or 13.x
 * EXT:forms installed
 
 
-Installation
-------------
+## Installation
 
 1. Just install the extension in TYPO3.
 2. In your TypoScript Template you need to add the static includes "EXT:form Serialnumber Finisher", before you can
@@ -42,11 +37,9 @@ Installation
 3. Clear the system caches.
 
 
-Using the finisher
-------------------
+## Using the finisher
 
-Configuration
-^^^^^^^^^^^^^
+### Configuration
 
 The serialnumber finisher has some options you can use:
 
@@ -59,72 +52,67 @@ Also you can override the finisher settings in Flexform of form plugin content e
 "Override finisher settings" checkbox.
 
 
-Variables
-^^^^^^^^^
+### Variables
 
 The serialnumber finisher provides two variables you can use in further finishers and templates.
 
-::
-
-    {Serialnumber.serialnumber}
-    {Serialnumber.index}
+```text
+{Serialnumber.serialnumber}
+{Serialnumber.index}
+```
 
 Serialnumber contains configured prefix. Index is the id, stored in sys_registry.
 
 
-sys_registry
-^^^^^^^^^^^^
+### sys_registry
 
 TYPO3 provides a database table and a simple API to store informations which doesn't worth an own database table.
 
-.. image:: Documentation/Images/registry.png
+![Serialnumber counter in sys_registry](Documentation/Images/registry.png)
 
 Here you can modify the value manually.
 
-.. caution::
-   The values stored in `sys_registry <https://docs.typo3.org/typo3cms/CoreApiReference/ApiOverview/SystemRegistry/Index.html>`_ are serialized!
+> **Caution:** The values stored in [sys_registry](https://docs.typo3.org/typo3cms/CoreApiReference/ApiOverview/SystemRegistry/Index.html) are serialized!
 
 
-Example finisher configuration
-------------------------------
+## Example finisher configuration
 
 In this configuration we use the `{Serialnumber.serialnumber}` variable from the previously configured
 serialnumber finisher. Also because we've enabled the **addField** option, the mail will contain the
 serialnumber as additional field.
 
-::
+```yaml
+finishers:
+  -
+    options:
+      identifier: example
+      addField: true
+      fieldLabel: Seriennummer
+      prefix: 2019-
+    identifier: Serialnumber
+  -
+    options:
+      subject: 'Formulareinsendung {Serialnumber.serialnumber}'
+      recipientAddress: egal@ich.com
+      recipientName: Ich
+      senderAddress: egal@du.com
+      senderName: Du
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: true
+      translation:
+        language: ''
+    identifier: EmailToReceiver
+```
 
-    finishers:
-      -
-        options:
-          identifier: example
-          addField: true
-          fieldLabel: Seriennummer
-          prefix: 2019-
-        identifier: Serialnumber
-      -
-        options:
-          subject: 'Formulareinsendung {Serialnumber.serialnumber}'
-          recipientAddress: egal@ich.com
-          recipientName: Ich
-          senderAddress: egal@du.com
-          senderName: Du
-          replyToAddress: ''
-          carbonCopyAddress: ''
-          blindCarbonCopyAddress: ''
-          format: html
-          attachUploads: true
-          translation:
-            language: ''
-        identifier: EmailToReceiver
 
-
-Sponsor
--------
+## Sponsor
 
 This extension has been sponsored by:
 
-.. image:: Documentation/Images/logo-zazudesign.png
+![zazudesign logo](Documentation/Images/logo-zazudesign.png)
 
 
 **zazudesign - die Schwarzwald Werbeagentur in Berlin**
@@ -135,10 +123,9 @@ Digitalisierung, Projektierung digitaler Plattformen, Filmproduktion und TYPO3
 * Email: thomas.hezel@zazudesign.de
 
 
-Links
------
+## Links
 
-* `Source code <https://bitbucket.org/t--3/form_serialnumber>`_
-* `Packagist <https://packagist.org/packages/t3/form-serialnumber>`_
-* `TER <https://extensions.typo3.org/extension/form_serialnumber>`_
-* `Sponsor <https://www.zazudesign.de>`_
+* [Source code](https://bitbucket.org/t--3/form_serialnumber)
+* [Packagist](https://packagist.org/packages/t3/form-serialnumber)
+* [TER](https://extensions.typo3.org/extension/form_serialnumber)
+* [Sponsor](https://www.zazudesign.de)
